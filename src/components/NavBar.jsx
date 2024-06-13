@@ -16,6 +16,7 @@ const NavBar = () => {
                         <div className="navbar-nav">
 
                             <Link className="nav-link" to="/addbus">Add Bus</Link>
+                            <Link className="nav-link" to="/viewall">View All Bus</Link>
                       
              
                         </div>

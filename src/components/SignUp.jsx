@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const SignUp = () => {
     const [data,setData]=useState(
@@ -109,7 +110,7 @@ const SignUp = () => {
                             <button className="btn btn-success" onClick={readValue}>Add User</button>
 
                         </div>
-                       
+                        <Link className="nav-link" to="/">Log In</Link>
                     </div>
                 </div>
             </div>

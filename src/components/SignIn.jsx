@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const SignIn = () => {
+    let navigate = useNavigate()
     const [data,setData]=useState(
         {
   
@@ -20,9 +21,14 @@ const SignIn = () => {
         console.log(data)
         axios.post("http://localhost:8080/signin",data).then(
             (response)=>{
-                console.log(response.data)
-     
-                    alert(response.data.status)
+                if(response.data.status == "success"){
+                    sessionStorage.setItem("token",response.data.token)
+                    sessionStorage.setItem("userid",response.data.userid)
+                    navigate("/addbus")
+                }
+                else{
+                    alert("FAILED")
+                }
                     
    
             }
